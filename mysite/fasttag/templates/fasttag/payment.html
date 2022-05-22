@@ -1,0 +1,135 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'fasttag/style.css' %}">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastTAG</title>
+ <!-- Bootstrap -->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+
+</head>
+<!--header-->   
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark  colo">
+        <div class="container">
+            <a href="/" class="navbar-brand">
+                <img src="{% static 'fasttag/images/logo.png' %}" alt="" width="30" height="24">
+                FastTag</a>
+            </div>
+        </nav>
+    </header>
+     <!--header--> 
+<body style="background-color: #e6dcf8;">
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7">
+
+
+
+                    <div>
+
+                        <div class=" card mt-5 crd">
+                            <div class="card-header">
+                                Name:{{users.username}}
+                                
+                            </div>
+                            <div class="card-body">
+                                <form action="{% url 'fasttag:pay' users.fastid %}" onsubmit=" openModal()" id="#mymodal" method="POST">
+                                    {% csrf_token %}
+
+                                    <div class="form-group">
+                                        FastTrack id:{{users.fastid}}
+                                    </div>
+                                    <div class="form-group">
+                                        Vehicle Number:{{users.vehnum}}
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        FastTrack Balance:{{users.accbal}}
+                                    </div>
+                                    <div class="form-group">
+                                        Fine Amount:{{users.fine}}
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <input type="submit" value="pay fine" class="btn btn-primary "  >        
+                                    </button>
+                                    </div>
+                                <br>
+                                <div class="form-group">
+                                    <B>pay by cash</B>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label for="fund">amount</label>
+                                    <input type="number" name="fund" id="fund" class="form-control"
+                                        placeholder="" />
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <input type="submit" value="pay fine" class="btn btn-primary "  >        
+                                    </button>
+                                </div>
+                                </form>
+                            </div>
+                            
+                                
+
+                        </div>
+                        
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        
+
+    </section>
+    
+
+    
+
+    <div class="modal fade" id="mymodal" tabindex="-1" aria-labelledby="sucess" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Transaction status</h5>
+
+                </div>
+                <div class="modal-body">
+                    <img src="{% static 'fasttag/images/sucess.png' %}" style="float: left; width: 200px;">
+                    <p class="mt-5" style="font-size: 20px;"><strong> Transaction successful</strong></p>
+                </div>
+                <div class="modal-footer " style="color: rgb(99, 105, 105);">
+                    encrypted transaction
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"
+        integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
+        integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG"
+        crossorigin="anonymous"></script>
+
+
+
+</html>

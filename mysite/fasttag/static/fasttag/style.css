@@ -1,0 +1,88 @@
+.topside {
+    background-color: blueviolet;
+    
+}
+
+body {
+    background-color: #0c041d;
+
+}
+
+.th {
+    colors: #d3bbff;
+}
+
+    {
+    background-color: black;
+}
+
+.colo {
+    background-color: blueviolet;
+}
+
+.th {
+
+    padding: 10px;
+    text-align: center;
+}
+
+.foo {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: blueviolet;
+    color: white;
+    height: 30px;
+    text-align: left;
+
+}
+
+th {
+    background-color: blueviolet;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+
+}
+
+.bg-hero {
+
+    margin-top: 100px;
+    width: 570px;
+
+
+}
+
+.txt {
+    text-align: center;
+}
+
+.user {
+    margin-left: 205px;
+    margin-right: auto;
+    margin-top: 150px;
+    width: 130px;
+}
+
+.userlink {
+
+    margin-left: 245px;
+}
+
+.tralogo {
+    width: 180px;
+    margin-left: 180px;
+}
+
+.translink {
+    margin-left: 240px;
+
+}
+
+.trrr {
+    width: 500px;
+}
